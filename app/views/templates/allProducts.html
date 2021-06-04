@@ -1,0 +1,30 @@
+			
+
+			<h2 class="text-center" style="font-family: 'Berkshire Swash', cursive;"> Products - Available </h2>
+			<!-- ALERT IF NO PRODUCTS PRESENT -->
+			<div class="alert alert-danger" ng-if="allCtrl.emptyProducts" role="alert">
+			  <strong> No products available </strong>
+			</div>
+			<!-- ALL PRODUCTS -->
+			<div class="row">
+		    	<div class="col-15 offset-1 col-md-3 all-products text-center" ng-repeat = "item in allCtrl.allProducts">
+					<div class="center">
+						<div class="property-card">
+						  <a href="#">
+							<div class="property-image">
+							  <div class="property-image-title">
+								<!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+							  </div>
+							</div></a>
+						  <div class="property-description">
+							<h5> {{ item.productName }} </h5>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Category : {{ item.category }}</li>
+								<li class="list-group-item">Owner : {{ item.owner.firstName }} {{ item.owner.lastName }}</li>
+							</ul>
+							<a class="btn btn-primary" ng-href="#/product/{{ item._id }}" style="margin-top: 1rem;"> Know more</a>
+						  </div>
+						</div>
+					  </div>
+		    	</div>
+			</div>

@@ -1,0 +1,75 @@
+
+      <!--  SINGLE PRODUCT DETAIL -->
+      <div class="row text-center">
+
+		    	<div class="col-12 edit-card" ng-if="edDelCtrl.showProduct">
+            <div style="display: flex; margin-top: 1rem">
+              <button class="btn btn-muted" ng-click="edDelCtrl.showHide()">Edit</button>
+               <button class="btn btn-danger" ng-click="edDelCtrl.deleteProduct()">Delete</button>
+             </div>
+		    		<div class="row" style="padding: 2em;">
+              <div class="col-12 col-sm-6">
+                <img src="./../images/images.jfif" style="width: 100%; height: 100%;">
+              </div>
+		    			<div class="col-12 col-sm-6">
+		    				<h3> Name : {{ edDelCtrl.product.productName }}</h3>
+		    			 	<hr>
+		    			 	<h4> Brand : {{ edDelCtrl.product.color }}</h4>
+		    			 	<hr>
+		    			 	<h4> Category : {{ edDelCtrl.product.category}}</h4>
+                <hr>
+		    				<h4> Price : Rs {{ edDelCtrl.product.price}}</h4>
+		    				<hr>
+		    				<h4> Additional-Info : {{ edDelCtrl.product.additionalInfo}}</h4>
+		    				<hr>
+		    				<h4> Available in : {{ edDelCtrl.product.availableIn }} days</h4>
+                <hr>
+		    			</div>
+		    			
+            </div>
+          </br>
+             <!-- <button class="btn btn-success" ng-click="edDelCtrl.addToCart()">Buy Now</button>
+             <button class="btn btn-warning" ng-click="edDelCtrl.addToCart()">Wishlist</button> -->
+             <button class="btn btn-success" ng-click="">Buy Now</button>
+             <button class="btn btn-warning" ng-click="">Wishlist</button>
+		    	</div>
+		    	
+			</div>
+
+      <!-- EDIT A PRODUCT FORM-->
+    	 <form ng-submit = "edDelCtrl.editProduct()" ng-if="edDelCtrl.showForm">
+          <div class="row">
+              <div class="col-sm-4 offset-sm-4">
+                <div class="card">
+                  <div class="card-block">
+                      <div class="form-group">
+                        <label for="product-name">Product-Name</label>
+                        <input type="text" name="inputProduct" ng-model="edDelCtrl.product.productName" class="form-control" id="product-name" aria-describedby="nameHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-category">Category</label>
+                        <input type="text" name="inputCategory" ng-model="edDelCtrl.product.category" class="form-control" id="product-cateogry" aria-describedby="categoryHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-color">Brand</label>
+                        <input type="text" name="inputColor" ng-model="edDelCtrl.product.color" class="form-control" id="product-color" aria-describedby="colorHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-price">Price</label>
+                        <input type="number" name="inputPrice" ng-model="edDelCtrl.product.price" class="form-control" id="product-price" aria-describedby="priceHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-addinfo">Additional-Info</label>
+                        <input type="text" name="inputCategory" ng-model="edDelCtrl.product.additionalInfo" class="form-control" id="product-addinfo" aria-describedby="addinfoHelp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-avail">Available-In (Days)</label>
+                        <input type="number" name="inputDay" ng-model="edDelCtrl.product.availableIn" class="form-control" id="product-avail" aria-describedby="dayHelp" required>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </br>
+          <button class="btn btn-success" type="submit" style="display: block;margin: 0px auto;">Update</button>
+        </form>

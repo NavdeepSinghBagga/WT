@@ -1,0 +1,56 @@
+   
+ <!--  ALERT MESAGE IF PRODUCT CREATED -->
+    <div class="alert alert-success" ng-if="createCtrl.alerts">
+    <h4><i>{{ createCtrl.alertText }}</i></h4>.
+    </div>
+
+   <!--  CREATE A PRODUCT FORM -->
+  </br>
+</br>
+    <form ng-submit = "createCtrl.submitCreate()">
+      <div class="row">
+          <div class="col-sm-4 offset-sm-4">
+            <div class="card">
+              <div class="card-block">
+                  <div class="form-group">
+                    <label for="product-name">Product-Name<sup>*</sup></label>
+                    <input type="text" name="inputProduct" ng-model="createCtrl.productName" class="form-control" id="product-name" aria-describedby="nameHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-category">Category<sup>*</sup></label>
+                    <input type="text" name="inputCategory" ng-model="createCtrl.category" class="form-control" id="product-cateogry" aria-describedby="categoryHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-color">Brand<sup>*</sup></label>
+                    <input type="text" name="inputColor" ng-model="createCtrl.color" class="form-control" id="product-color" aria-describedby="colorHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-price">Price<sup>*</sup></label>
+                    <input type="number" name="inputPrice" ng-model="createCtrl.price" class="form-control" id="product-price" aria-describedby="priceHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-addinfo">Additional-Info (Condition, Reason for sale, Days used, etc.)<sup>*</sup></label>
+                    <input type="text" name="inputCategory" ng-model="createCtrl.addInfo" class="form-control" id="product-addinfo" aria-describedby="addinfoHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-avail">Available-In (Days)<sup>*</sup></label>
+                    <input type="number" name="inputDay" ng-model="createCtrl.availIn" class="form-control" id="product-avail" aria-describedby="dayHelp" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-avail">Location<sup>*</sup></label>
+                    <input type="text" name="inputLoc" ng-model="createCtrl.availLoc" class="form-control" id="product-loc" aria-describedby="locHelp" required>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="img[]">Photos <sup>* </sup></label>
+                    <div class="controls">
+                      <input type="file" required="required" accept="image/*" multiple name="img[]" id="image" />
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </br>
+  </br>
+      <button class="btn btn-success" type="submit" style="display: block;margin: 0px auto;">Publish Ad</button>
+    </form>

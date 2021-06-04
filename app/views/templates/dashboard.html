@@ -1,0 +1,63 @@
+
+			<!-- DASHBOARD SETUP -->
+		  	<div class="row" style="margin-top:0.5rem;">
+		  		<div class="col-12 text-center">
+					  <h4>Hi, {{ dashCtrl.userName }}</h4>
+					  <br>
+				   	<div>
+						<a class="btn btn-warning" ng-href="#/product/create" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;">
+							<span><i class="fa fa-level-up text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>Sell
+						</a>
+						<a class="btn btn-warning" ng-href="#/product/all" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;">
+							<span><i class="fa fa-shopping-bag text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>Buy
+						</a>
+					</div>
+				</div>
+
+		  	</div>
+		  	<hr>
+
+			  <!-- RECENTLY ADDED PRODUCT -->
+			  <br>
+		  	<div class="row">
+			  	<div class="col-12 offset-md-1" ng-if="!dashCtrl.productAvail">
+			  		<h4 class="text-muted">* No Recent Additions </h4>
+			  	</div>
+		  		<div class="col-12 col-sm-6 offset-sm-3" ng-if="dashCtrl.productAvail">
+					<div class="card dash-card">
+					  <div class="card-header">
+					    <h6>Recently Added Product</h6>
+					  </div>
+					  <div class="center">
+						<div class="property-card">
+						  <a href="#">
+							<div class="property-image">
+							  <div class="property-image-title">
+								<!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+							  </div>
+							</div></a>
+						  <div class="property-description">
+							<h5> {{ dashCtrl.recentProduct.productName }} </h5>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Category : {{ dashCtrl.recentProduct.category }}</li>
+								<li class="list-group-item">Owner : {{ dashCtrl.recentProduct.owner.firstName }}</li>
+							</ul>
+							<div style="display: justify-content: space-between;margin-top: 0.8rem;">
+								<a href="#/product/{{dashCtrl.recentProduct._id }}" class="btn btn-primary center-block"> More
+								</a>
+								<!-- <span ng-click="dashCtrl.addToCart()"><i class="fa fa-plus-circle fa-2x" data-toggle="tooltip" data-placement="bottom" title="Add to cart"></i></span> -->
+								<!-- <span ng-click=""><i class="fa fa-plus-circle fa-2x" data-toggle="tooltip" data-placement="bottom" title="Add to cart"></i></span> -->
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+			
+		    
+		
+
