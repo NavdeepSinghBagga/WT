@@ -30,10 +30,7 @@ var path = require("path");
 app.use(express.static(__dirname +'/app/views'));
 
 //Establishing database connection
-// USING MLAB'S DATABASE ACCOUNT -For HEROKU Purpose
-//var dbPath="mongodb+srv://kruthika:kruthika@cluster0-0rzcs.mongodb.net/test?retryWrites=true&w=majority";
 var dbPath="mongodb+srv://tryuser:tryuser@cluster0.fwuun.mongodb.net/test?retryWrites=true&w=majority"
-//var dbPath = "mongodb+srv://kruthika:kruthika@meanolx-0rzcs.mongodb.net/test?retryWrites=true&w=majority";
 
 // For EDWISOR assignment - purpose > uncomment this line
 //var dbPath = "mongodb://localhost/shopCart";
